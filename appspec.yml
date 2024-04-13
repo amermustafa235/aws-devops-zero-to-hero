@@ -1,12 +1,16 @@
 version: 0.0
 os: linux
 
-hooks:
-  ApplicationStop:
-    - location: scripts/stop_container.sh
-      timeout: 300
-      runas: root
-  AfterInstall:
-    - location: scripts/start_container.sh
-      timeout: 300
-      runas: root
+files:
+  - source: arm-rabit-bucket/java_proj/rabit-##56.jar
+    destination: /tmp
+
+#hooks:
+#  ApplicationStop:
+#    - location: scripts/stop_container.sh
+#      timeout: 300
+#      runas: root
+#  AfterInstall:
+#    - location: scripts/start_container.sh
+#      timeout: 300
+#      runas: root
